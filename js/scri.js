@@ -24,7 +24,6 @@ let editId = null;
 
 function deleteLTable(id) {
     allEle = allEle.filter(table => table.id !== id)
-    console.log("check");
     randerTable(allEle)
 }
 
@@ -58,9 +57,6 @@ function updateTable() {
         updateTable.number = numberEle.value;
         updateTable.gender = genderEle.value;
     }
-    /* if (updateTable.email === emailEle) {
-        console.log("same email"); 
-    } */
 
     randerTable(allEle)
     clearForm();
