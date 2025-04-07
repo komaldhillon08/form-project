@@ -7,6 +7,7 @@ let roleEle = document.getElementById("role");
 let addressEle = document.getElementById("address");
 let numberEle = document.getElementById("number");
 let genderEle = document.getElementById("gender");
+let result = document.getElementById("result");
 
 // table div 
 
@@ -57,6 +58,9 @@ function updateTable() {
         updateTable.number = numberEle.value;
         updateTable.gender = genderEle.value;
     }
+    /* if (updateTable.email === emailEle) {
+        console.log("same email"); 
+    } */
 
     randerTable(allEle)
     clearForm();
@@ -108,14 +112,16 @@ function randerTable(table) {
 
         let tdAction = document.createElement("td")
 
-        let editBtn = document.createElement("button")
-        editBtn.innerHTML = "Edit"
+        let editBtn = document.createElement("img")
+        // editBtn.innerHTML = "Edit"
+        editBtn.src = "./assets/pencil.png";
         editBtn.classList = "edit"
         editBtn.setAttribute = ("data-id", tableFildes.id);
         editBtn.onclick = () => editTableFild(tableFildes.id);
 
-        let deleteBtn = document.createElement("button")
-        deleteBtn.innerHTML = "Delete"
+        let deleteBtn = document.createElement("img")
+        deleteBtn.src = "./assets/delete.png"
+        // deleteBtn.innerHTML = "Delete"
         deleteBtn.classList = "delete"
         deleteBtn.setAttribute = ("data-id", tableFildes.id);
         deleteBtn.onclick = () => deleteLTable(tableFildes.id);
@@ -139,10 +145,28 @@ function randerTable(table) {
 formEle.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    let existingEmail = allEle.find(user => user.email === emailEle.value.trim())
+    let existingNumber = allEle.find(user => user.number === numberEle.value.trim())
+
+    if (existingEmail && (editId === null || existingEmail.id !== editId)) {
+        result.innerHTML = "email is not requied";
+        result.style.display = "block"
+        return;
+    } 
+    if(existingNumber && (editId === null || existingNumber.id !== editId)){
+        result.innerHTML = "Number is not requied";
+        result.style.display = "block"
+        return;
+    }
+    else {
+        console.log("not working");
+
+    }
+
     if (editId !== null) {
         updateTable();
     } else {
-        editId = null 
+        editId = null
 
         if (firstNameEle.value !== "") {
             console.log(`firstNameEle : ${firstNameEle.value}`);

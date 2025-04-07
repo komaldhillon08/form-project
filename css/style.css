@@ -27,7 +27,6 @@
 
 .col {
     display: flex;
-    
     margin: 20px auto;
     width: 100%;
 }
@@ -37,12 +36,11 @@
     margin-bottom: 15px; 
     display: flex;
     align-items: center;
+    width: 50%;
 }
 
-.row label {
-    display: block;
-    margin-bottom: 5px; 
-}
+
+
 
 .row input,select {
     width: 100%;
@@ -60,7 +58,7 @@
 label {
     max-width: 119px;
     width: 100%;
-}
+} 
 .main-btn button{
     max-width: 300px;
     width: 100%;
@@ -104,7 +102,7 @@ table {
     border: 1px solid #ddd;
   }
   .edit , .delete{
-    background-color: #fb2020 ;
+    /* background-color: #fb2020 ; */
      padding: 5px 20px;
     border: none;
     outline: none;
@@ -114,8 +112,14 @@ table {
     font-size: 15px;
     letter-spacing: 2px;
   } 
-  .delete{
-    background-color: #4CAF50;
+  .delete,.edit{
+    /* background-color: #4CAF50; */
+    width: 60px;
+  }
+  #result{
+   color: red;
+    display: none;
+
   }
 
   /* Responsive table */
