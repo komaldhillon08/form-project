@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form ">
+            <form id="form">
+                <div class="col">
+                    <h2>User Form</h2>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" placeholder="Enter Your Name" id="firstname" required>
+                    </div>
+                    <div class="row">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" placeholder="Enter Your Last Name" id="lastname" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <label for="email">Email: </label>
+                        <input type="email" placeholder="Enter Your Email" id="email" required>
+                    </div>
+                    <div class="row">
+                        <label for="age">Age: </label>
+                        <input type="number" placeholder="Enter Your Age" id="age" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <label for="role">Role: </label>
+                        <input type="text" placeholder="Enter Your Role" id="role" required>
+                    </div>
+                    <div class="row">
+                        <label for="Address">Address: </label>
+                        <input type="text" placeholder="Enter Your Address" id="address" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <label for="number">Number: </label>
+                        <input type="number" placeholder="Enter Your Number" id="number" required>
+                    </div>
+                    <div class="row">
+                        <label for="gender">Gender: </label>
+                        <select id="gender" required>
+                            <option value="gender" disabled selected >Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="main-btn">
+
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h2>User Output</h2>
+        </div>
+        <div class="table-div">
+            <table class="main-table">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Role</th>
+                    <th>Address</th>
+                    <th>Number</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+               <!--    <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>johndoe@example.com</td>
+                    <td>30</td>
+                    <td>Developer</td>
+                    <td>1234 Elm St.</td>
+                    <td>555-1234</td>
+                    <td>Male</td>
+                    <td>
+                        <button id="edit">Edit</button>
+                        <button id="delete">Detele</button>
+
+                  </tr> -->
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+
+    <script src="./js/scri.js"></script>
+</body>
+
+</html>
