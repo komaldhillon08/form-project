@@ -42,7 +42,7 @@
 
 
 .row input,
-select {
+select , #search{
   width: 100%;
   max-width: 400px;
   height: 35px;
@@ -129,7 +129,10 @@ td {
   display: none;
 
 }
-
+.heading-and-search{
+  display: flex;
+  justify-content: space-between;
+}
 
 @media(max-width: 1099px) {
   table {

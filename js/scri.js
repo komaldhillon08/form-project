@@ -14,6 +14,8 @@ let result = document.getElementById("result");
 // tbody 
 let tbody = document.getElementById("tbody")
 
+//search 
+let searchEle = document.getElementById("search")
 
 // crate the array then push the onj 
 
@@ -138,6 +140,43 @@ function randerTable(table) {
     });
     localStorage.setItem("allEle", JSON.stringify(allEle));
 }
+
+// search input 
+
+function searchTable() {
+    let searchQuery = searchEle.value.toLowerCase();
+
+    let filterResult = allEle.filter(user => {
+        return (
+            user.firstName.toLowerCase().includes(searchQuery) ||
+            user.lastName.toLowerCase().includes(searchQuery) ||
+            user.email.toLowerCase().includes(searchQuery) ||
+            user.age.toLowerCase().includes(searchQuery) ||
+            user.role.toLowerCase().includes(searchQuery) ||
+            user.number.toLowerCase().includes(searchQuery) ||
+            user.gender.toLowerCase().includes(searchQuery) ||
+            user.address.toLowerCase().includes(searchQuery) 
+        ) ;
+
+
+    });
+
+
+    randerTable(filterResult)
+}
+searchEle.addEventListener("input", searchTable);
+
+
+
+
+
+
+
+
+
+
+
+
 formEle.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -148,8 +187,8 @@ formEle.addEventListener("submit", (event) => {
         result.innerHTML = "email is not requied";
         result.style.display = "block"
         return;
-    } 
-    if(existingNumber && (editId === null || existingNumber.id !== editId)){
+    }
+    if (existingNumber && (editId === null || existingNumber.id !== editId)) {
         result.innerHTML = "Number is not requied";
         result.style.display = "block"
         return;
